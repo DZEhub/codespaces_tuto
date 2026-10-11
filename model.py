@@ -1,7 +1,10 @@
 import matplotlib.pyplot as plt
 import numpy as np
+from datetime import datetime
 
 from sklearn.decomposition import PCA
+
+datetime_str = datetime.now().strftime("%Y%m%d_%H%M%S")
 
 rng = np.random.RandomState(0)
 n_samples = 500
@@ -27,5 +30,5 @@ plt.gca().set(
     ylabel="second feature",
 )
 plt.legend()
-plt.savefig("pca_plot.png", dpi=300)
+plt.savefig(f"pca_plot_{datetime_str}.png", dpi=300)
 plt.show()
